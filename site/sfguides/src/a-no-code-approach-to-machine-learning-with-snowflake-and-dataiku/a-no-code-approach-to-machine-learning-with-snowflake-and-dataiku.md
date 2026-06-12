@@ -29,7 +29,7 @@ We’ll use machine learning to help with this decision making process. Our mode
 
 ### What You’ll Learn
 The exercises in this lab will walk you through the steps to: 
-- Use Snowflake's "Partner Connect" to create a Dataiku cloud trial
+- Use Snowflake Marketplace to create a Dataiku cloud trial
 - Create a Snowpark-optimized warehouse (for ML workloads)
 - Upload a base project in Dataiku with our data sources in Snowflake
 - Look at our loan data, understand trends through correlation matrices
@@ -40,7 +40,7 @@ The exercises in this lab will walk you through the steps to:
 
 ### What You’ll Need 
 - Snowflake free 30-day trial environment
-- Dataiku free 14-day trial environment (via Snowflake Partner Connect)
+- Dataiku free 30-day trial environment (via [Snowflake Marketplace](https://app.snowflake.com/marketplace/listing/GZTSZNUFX99I/dataiku-dataiku-for-enterprise-ai))
 
 
 <!-- ------------------------ -->
@@ -68,7 +68,7 @@ After activation, you will create a ```username```and ```password```. Write down
 
 
 <!-- ------------------------ -->
-## Create Your Dataiku Lab Environment (Via Snowflake Partner Connect)
+## Create Your Dataiku Lab Environment (Via Snowflake Marketplace)
 
 
 ### Log Into the Snowflake User Interface (UI)
@@ -85,32 +85,28 @@ You may see "welcome" and "helper" boxes in the UI when you log in for the first
 
 ![img](assets/PC2.png)
 
-### Create Dataiku trial via Partner Connect
+### Create Dataiku trial via Snowflake Marketplace
 
 At the top right of the page, confirm that your current role is `ACCOUNTADMIN`, by clicking on your profile on the top right.
 
-1. Click on `Data Products` on the left-hand menu
-2. Click on `Partner Connect`
-3. Search for Dataiku
-4. Click on the `Dataiku` tile 
+1. Click on `Marketplace` on the left-hand menu
+2. Search for `Dataiku for Enterprise AI` or follow this [link](https://app.snowflake.com/marketplace/listing/GZTSZNUFX99I/dataiku-dataiku-for-enterprise-ai)
+3. Click on the `Dataiku for Enterprise AI` result
+4. Click on  `Start free trial`
 
-![img](assets/PC3.png)
-
-> 
-> Depending on which screen you are on you may not see the full menu as above but hovering over 
-> the Data Products (Cloud) icon will show the options
+![img](assets/sf-marketplace-0.png)
 
 This will automatically create the connection parameters required for Dataiku to connect to Snowflake. Snowflake will create a dedicated database, warehouse, system user, system password and system role, with the intention of those being used by the Dataiku account.
 
-For this lab we’d like to use the **PC_DATAIKU_USER** to connect from Dataiku to Snowflake, and use the **PC_DATAIKU_WH** when performing activities within Dataiku that are pushed down into Snowflake.
+For this lab we'd like to use the **PC_DATAIKU_USER** to connect from Dataiku to Snowflake, and use the **PC_DATAIKU_WH** when performing activities within Dataiku that are pushed down into Snowflake.
 
 This is to show that a Data Science team working on Dataiku and by extension on Snowflake can work completely independently from the Data Engineering team that works on loading data into Snowflake using different roles and warehouses.
 
-![img](assets/PC4.png)
-<br>
-<br>
+![img](assets/sf-marketplace-1.png)
 
-1. Click `Connect`
+Note that Snowflake connection parameters are passed to the Dataiku server so that they will automatically be used for the Dataiku connection for this lab. **DO NOT CHANGE THESE**.
+
+1. Click `Connect to Dataiku`
 2. You will get a pop-ip which tells you your partner account has been created. Click on `Activate`
 
 > 
@@ -221,7 +217,7 @@ snowflake-ml-python==1.5.0
 
 ![img](assets/PC13.png)
 
-You've now successfully set up your Dataiku trial account via Snowflake's Partner Connect. We are now ready to continue with the lab. For this, move back to your Snowflake browser.
+You've now successfully set up your Dataiku trial account via Snowflake Marketplace. We are now ready to continue with the lab. For this, move back to your Snowflake browser.
 
 <!-- ------------------------ -->
 ## Create a Snowpark Optimized Warehouse in Snowflake
@@ -253,7 +249,7 @@ Once in the `New Warehouse` creation screen perform the following steps:
 
 ![img](assets/OWH3.png)
 
-We need to permission the Dataiku Role that was created by Partner Connect in the earlier chapter for this new warehouse.
+We need to permission the Dataiku Role that was created by Snowflake Marketplace in the earlier chapter for this new warehouse.
 - Scroll down to Privileges, and click `+ Privilege`
 
 ![img](assets/OWH4.png)
@@ -915,7 +911,7 @@ We encourage you to continue with your free trial and continue to refine your mo
 
 ### What You Learned:
 
-- Use Snowflake's "Partner Connect" to create a Dataiku cloud trial
+- Use Snowflake Marketplace to create a Dataiku Cloud trial
 - Create a Snowpark-optimized warehouse (for ML workloads)
 - Upload a base project in Dataiku with our data sources in Snowflake
 - Look at our loan data, understand trends through correlation matrices
